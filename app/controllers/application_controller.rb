@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
       head :error
     else
       user = User.create(:email => params[:email])
-      UserMailer.mailer(user).deliver_now
+      UserMailer.mail_back(user).deliver_now
       head :ok
     end
   end

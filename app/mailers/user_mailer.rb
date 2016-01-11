@@ -1,7 +1,7 @@
-class UserMailer < ApplicationMailer
+class UserMailer < ActionMailer::Base
   default from: "info@csgoarsenal.com"
 
-  def mailer(user)
+  def mail_back(user)
     @user = user
     mail(to: "info@csgoarsenal.com", subject: "#{@user.email} just subscribed") do |format|
       format.html
