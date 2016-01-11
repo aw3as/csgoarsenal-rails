@@ -1,0 +1,7 @@
+doctype html
+html
+  head
+    meta content=("text/html; charset=UTF-8") http-equiv="Content-Type" /
+  body
+    h1 = "Someone just signed up"
+    p = "#{@user.email} just signed up on #{Time.now.strftime('%A, %B %-e %Y at %-l:%M %p')}"

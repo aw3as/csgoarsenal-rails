@@ -8,7 +8,8 @@ class ApplicationController < ActionController::Base
     if User.find_by(:email => params[:email])
       head :error
     else
-      User.create(:email => params[:email])
+      user = User.create(:email => params[:email])
+      UserMailer.mailer(user).deliver_now
       head :ok
     end
   end
